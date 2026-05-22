@@ -1,0 +1,34 @@
+[package]
+name = "localhost"
+version = "0.1.0"
+edition = "2021"
+description = "HTTP/1.1 server — single process, single thread, epoll-driven"
+license = "MIT"
+readme = "README.md"
+default-run = "localhost"
+
+[[bin]]
+name = "localhost"
+path = "src/main.rs"
+
+[[bin]]
+name = "localhost-gui"
+path = "src/bin/localhost-gui.rs"
+required-features = ["gui"]
+
+[features]
+default = []
+gui = ["eframe", "egui"]
+
+[dependencies]
+libc = "0.2"
+eframe = { version = "0.31", optional = true }
+egui = { version = "0.31", optional = true }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

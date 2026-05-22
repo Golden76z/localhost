@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Localhost — HTTP/1.1</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="glow"></div>
+  <main>
+    <p class="eyebrow">Rust · epoll · single thread</p>
+    <h1>Your own <span class="accent">localhost</span></h1>
+    <p class="lead">A showcase static site for audits: routes, uploads, CGI, sessions, and custom errors.</p>
+    <nav class="grid">
+      <a href="/demo/">Directory listing</a>
+      <a href="/legacy">Redirect → demo</a>
+      <a href="/cgi/hello.py">Python CGI</a>
+      <a href="/cgi/hello.pl">Perl CGI (bonus)</a>
+      <a href="/chat.html">Live chat (SSE)</a>
+      <a href="/upload.html">Upload file</a>
+      <a href="/nope">404 test</a>
+    </nav>
+    <section class="card">
+      <h2>Session</h2>
+      <p id="sess">Loading…</p>
+      <button id="bump">Increment visit counter</button>
+    </section>
+  </main>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

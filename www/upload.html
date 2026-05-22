@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Upload</title>
+<link rel="stylesheet" href="/assets/style.css"></head>
+<body><main>
+<h1>Upload</h1>
+<form action="/upload" method="post" enctype="text/plain">
+  <input type="file" id="f" />
+  <button type="submit">Send</button>
+</form>
+<script>
+document.querySelector('form').onsubmit = async (e) => {
+  e.preventDefault();
+  const f = document.getElementById('f').files[0];
+  if (!f) return;
+  const data = await f.arrayBuffer();
+  await fetch('/upload', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/octet-stream', 'X-Filename': f.name },
+    body: data
+  });
+  alert('Uploaded ' + f.name);
+};
+</script>
+</main></body></html>

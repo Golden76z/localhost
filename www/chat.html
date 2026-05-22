@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Localhost Chat</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/chat.css" />
+</head>
+<body>
+  <div class="glow"></div>
+  <main class="chat-layout">
+    <header>
+      <p class="eyebrow">HTTP/1.1 · POST + SSE</p>
+      <h1>Live <span class="accent">chat</span></h1>
+      <p class="lead">Real-time room powered by your server (no WebSocket yet — pure HTTP).</p>
+      <a href="/" class="back">← Home</a>
+    </header>
+    <section class="card chat-panel">
+      <div id="status" class="status">Connecting…</div>
+      <ul id="log" class="chat-log"></ul>
+      <form id="form" class="chat-form">
+        <input id="user" type="text" placeholder="Nickname" maxlength="32" />
+        <input id="text" type="text" placeholder="Message…" maxlength="500" required />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+  <script src="/assets/chat.js"></script>
+</body>
+</html>
